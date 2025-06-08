@@ -1,0 +1,1 @@
+function makeEditable(cell,id){cell.contentEditable=true;cell.focus();cell.onkeydown=function(e){if(e.key==="Enter"||e.key==="Escape"){cell.contentEditable=false;let value=cell.innerText;if(e.key==="Enter"){fetch("persons",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:"id="+id+"&field=name&value="+encodeURIComponent(value)})}}}}
